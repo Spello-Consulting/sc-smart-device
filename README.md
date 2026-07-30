@@ -2,7 +2,7 @@
 
 Provides a simple, consistent access to Shelly and Tasmota smart switches and energy meters.
 
-Please see the [GitHub pages](https://nickelseyspelloc.github.io/sc-smart-device/) for complete documentation.
+Please see the [GitHub pages](https://spello-consulting.github.io/sc-smart-device/) for complete documentation.
 
 ## Development Environment
 

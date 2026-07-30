@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/NickElseySpelloC/sc-smart-device/example_config/">
+        <link rel="canonical" href="https://github.com/Spello-Consulting/sc-smart-device/example_config/">
       
       
         <link rel="prev" href="..">
@@ -1000,7 +1000,7 @@
     SimulationFileFolder: simulation_files
     ShellyWebhooks:
       Enabled: True
-      Host: 192.168.86.47
+      Host: 192.168.86.10
       Port: 8787
       Path: /shelly/webhook
       DefaultWebhooks:
@@ -1012,65 +1012,78 @@
           - switch.on
           - switch.off  
     Devices:
-      - Name: Sydney Dev A
+      - Name: Spello Test
         Model: Shelly2PMG3
-        Hostname: 192.168.86.30
+        Hostname: 192.168.86.36
         Simulate: False
         ExpectOffline: True
         Inputs:
-          - Name: &quot;Sydney Dev A I1&quot;
+          - Name: &quot;Spello Test I1&quot;
             Webhooks: True
-          - Name: &quot;Sydney Dev A I2&quot;
+          - Name: &quot;Spello Test I2&quot;
         Outputs:
-          - Name: &quot;Sydney Dev A O1&quot;
+          - Name: &quot;Spello Test O1&quot;
             Webhooks: True
-            Group: &quot;Living Room&quot;
-            Colour: &quot;Red&quot;
-          - Name: &quot;Sydney Dev A O2&quot;
-            Group: &quot;Living Room&quot;
-        Meters:
-          - Name: &quot;Sydney Dev A M1&quot;
-          - Name: &quot;Sydney Dev A M2&quot;
-        TempProbes:
-          - Name: &quot;Sydney Dev A&quot;
-      - Name: Sydney Dev B
-        Model: Tasmota
-        Hostname: 192.168.86.37
-        Simulate: False
-        ExpectOffline: True
-        Outputs:
-          - Name: &quot;Sydney Dev B O1&quot;
-            Group: &quot;Dining Room&quot;
-        Meters:
-          - Name: &quot;Sydney Dev B M1&quot;
-        TempProbes:
-          - Name: &quot;Sydney Dev B&quot;        
-      - Name: Sydney Solar
-        Model: Shelly2PMG3
-        Hostname: 192.168.86.35
-        Simulate: False
-        ExpectOffline: True
-        Outputs:
-          - Name: &quot;Solar Pump Output&quot;
-            Size: &quot;Large&quot;
-          - Name: &quot;Solar Valve Output&quot;
-            Colour: &quot;Blue&quot;
-        Meters:
-          - Name: &quot;Solar Pump Meter&quot;
-          - Name: &quot;Solar Pump Output&quot;
-        TempProbes:
-          - Name: &quot;Sydney Solar&quot;
-          - Name: &quot;Temp Roof&quot;
-          - Name: &quot;Temp Solar Return&quot;
-          - Name: &quot;Temp Pool Water&quot;
-      - Name: Sydney Panel EM1
-        Model: ShellyEMG3
-        Hostname: 192.168.86.44
-        Outputs:
-          - Name: &quot;Sydney Panel EM1 O1&quot;
-        Meters:
-          - Name: &quot;Sydney Panel EM1 M1&quot;
-          - Name: &quot;Sydney Panel EM1 M2&quot;
+          - Name: &quot;Spello Test O2&quot;
+      # - Name: Sydney Dev A
+      #   Model: Shelly2PMG3
+      #   Hostname: 192.168.86.30
+      #   Simulate: False
+      #   ExpectOffline: True
+      #   Inputs:
+      #     - Name: &quot;Sydney Dev A I1&quot;
+      #       Webhooks: True
+      #     - Name: &quot;Sydney Dev A I2&quot;
+      #   Outputs:
+      #     - Name: &quot;Sydney Dev A O1&quot;
+      #       Webhooks: True
+      #       Group: &quot;Living Room&quot;
+      #       Colour: &quot;Red&quot;
+      #     - Name: &quot;Sydney Dev A O2&quot;
+      #       Group: &quot;Living Room&quot;
+      #   Meters:
+      #     - Name: &quot;Sydney Dev A M1&quot;
+      #     - Name: &quot;Sydney Dev A M2&quot;
+      #   TempProbes:
+      #     - Name: &quot;Sydney Dev A&quot;
+      # - Name: Sydney Dev B
+      #   Model: Tasmota
+      #   Hostname: 192.168.86.37
+      #   Simulate: False
+      #   ExpectOffline: True
+      #   Outputs:
+      #     - Name: &quot;Sydney Dev B O1&quot;
+      #       Group: &quot;Dining Room&quot;
+      #   Meters:
+      #     - Name: &quot;Sydney Dev B M1&quot;
+      #   TempProbes:
+      #     - Name: &quot;Sydney Dev B&quot;        
+      # - Name: Sydney Solar
+      #   Model: Shelly2PMG3
+      #   Hostname: 192.168.86.35
+      #   Simulate: False
+      #   ExpectOffline: True
+      #   Outputs:
+      #     - Name: &quot;Solar Pump Output&quot;
+      #       Size: &quot;Large&quot;
+      #     - Name: &quot;Solar Valve Output&quot;
+      #       Colour: &quot;Blue&quot;
+      #   Meters:
+      #     - Name: &quot;Solar Pump Meter&quot;
+      #     - Name: &quot;Solar Pump Output&quot;
+      #   TempProbes:
+      #     - Name: &quot;Sydney Solar&quot;
+      #     - Name: &quot;Temp Roof&quot;
+      #     - Name: &quot;Temp Solar Return&quot;
+      #     - Name: &quot;Temp Pool Water&quot;
+      # - Name: Sydney Panel EM1
+      #   Model: ShellyEMG3
+      #   Hostname: 192.168.86.44
+      #   Outputs:
+      #     - Name: &quot;Sydney Panel EM1 O1&quot;
+      #   Meters:
+      #     - Name: &quot;Sydney Panel EM1 M1&quot;
+      #     - Name: &quot;Sydney Panel EM1 M2&quot;
 
 </code></pre>
 <h2 id="configuration-reference">Configuration Reference</h2>

@@ -488,7 +488,7 @@ class SCSmartDevice:  # noqa: PLR0904
     ) -> None:
         """Install a webhook on a device component.
 
-        See https://nickelseyspelloc.github.io/sc-smart-device/shelly_webhooks/ for details on supported events and payloads.
+        See https://spello-consulting.github.io/sc-smart-device/shelly_webhooks/ for details on supported events and payloads.
 
         Args:
             event: Shelly event name, e.g. ``"input.toggle_on"``.

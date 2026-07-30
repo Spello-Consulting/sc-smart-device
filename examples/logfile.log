@@ -851,3 +851,63 @@ Testing info functionality for device: Sydney Dev A
   Shelly1MiniG4 — Shelly 1 Mini Gen4 gen4 in=1 out=1 meters=0
   Shelly1PMMiniG4 — Shelly 1PM Mini Gen4 gen4 in=1 out=1 meters=1
   Shelly2PMG4 — Shelly 2PM Gen4 gen4 in=2 out=2 meters=2
+2026-07-09 18:05:24: SCSmartDevice initialized successfully with 1 devices.
+2026-07-09 18:05:24: 
+
+
+Testing webhook functionality for device: Spello Test
+2026-07-09 18:05:24: Device Spello Test is online.
+2026-07-09 18:05:24: Spello Test initial status:
+ Spello Test (ID: 1) — online
+  Model: Shelly 2PM Gen3
+  Simulation: False
+  Hostname: 192.168.86.36:80
+  ExpectOffline: True
+  Generation: 3 / Protocol: RPC
+  Inputs (2):
+    [0] id=1 name='Spello Test I1' state=True
+    [1] id=2 name='Spello Test I2' state=False
+  Outputs (2):
+    [0] id=1 name='Spello Test O1' state=True temp=57.2
+    [1] id=2 name='Spello Test O2' state=False temp=57.2
+  Meters (2):
+    [0] id=1 name='Meter 1' power=0.0W voltage=228.6V energy=0.0Wh
+    [1] id=2 name='Meter 2' power=0.0W voltage=228.6V energy=0.0Wh
+  TempProbes (0):
+  MAC: ECC9FF4B394C  Uptime: 724s  Temp: 57.2°C
+  TotalPower: 0W  TotalEnergy: 0Wh
+  Supported Webhooks: 10
+    - input.toggle_on
+    - input.toggle_off
+    - input.button_push
+    - input.button_longpush
+    - input.button_doublepush
+    - input.button_triplepush
+    - input.analog_change
+    - input.analog_measurement
+    - switch.off
+    - switch.on
+  Installed Webhooks: 5
+    - Spello Test I1: input.toggle_on
+    - Spello Test I1: input.toggle_off
+    - Spello Test I1: input.button_push
+    - Spello Test O1: switch.on
+    - Spello Test O1: switch.off
+2026-07-09 18:05:24: Waiting for webhook events... (Loop 1/20)
+2026-07-09 18:05:26: Waiting for webhook events... (Loop 2/20)
+2026-07-09 18:05:28: Waiting for webhook events... (Loop 3/20)
+2026-07-09 18:05:30: Waiting for webhook events... (Loop 4/20)
+2026-07-09 18:05:32: Waiting for webhook events... (Loop 5/20)
+2026-07-09 18:05:32: Received webhook event: Name: input.toggle_off, Device: Spello Test, Component: Spello Test I1
+2026-07-09 18:05:34: Waiting for webhook events... (Loop 6/20)
+2026-07-09 18:05:36: Waiting for webhook events... (Loop 7/20)
+2026-07-09 18:05:36: Received webhook event: Name: input.toggle_on, Device: Spello Test, Component: Spello Test I1
+2026-07-09 18:05:38: Waiting for webhook events... (Loop 8/20)
+2026-07-09 18:05:40: Waiting for webhook events... (Loop 9/20)
+2026-07-09 18:05:42: Waiting for webhook events... (Loop 10/20)
+2026-07-09 18:05:42: Received webhook event: Name: input.toggle_off, Device: Spello Test, Component: Spello Test I1
+2026-07-09 18:05:44: Waiting for webhook events... (Loop 11/20)
+2026-07-09 18:05:46: Waiting for webhook events... (Loop 12/20)
+2026-07-09 18:05:46: Received webhook event: Name: input.toggle_on, Device: Spello Test, Component: Spello Test I1
+2026-07-09 18:05:49: Waiting for webhook events... (Loop 13/20)
+2026-07-09 18:05:51: Waiting for webhook events... (Loop 14/20)

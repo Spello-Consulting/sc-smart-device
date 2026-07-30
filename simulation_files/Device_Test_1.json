@@ -1,0 +1,127 @@
+{
+  "Index": 0,
+  "Model": "Shelly2PMG3",
+  "Name": "Device Test 1",
+  "ClientName": "Device Test 1",
+  "ID": 1,
+  "ObjectType": "device",
+  "Simulate": true,
+  "GetConfig": true,
+  "SimulationFile": "/Users/nick/dev/sc-smart-device/simulation_files/Device_Test_1.json",
+  "ExpectOffline": false,
+  "ModelName": "Shelly 2PM Gen3",
+  "Label": "Device Test 1 (ID: 1)",
+  "URL": "https://www.shelly.com/products/shelly-2pm-gen3",
+  "Hostname": "192.168.1.20",
+  "Port": 80,
+  "Generation": 3,
+  "Protocol": "RPC",
+  "Inputs": [
+    {
+      "DeviceIndex": 0,
+      "DeviceID": 1,
+      "ComponentIndex": 0,
+      "ObjectType": "input",
+      "ID": 1,
+      "Name": "Device 1.Input 1",
+      "Webhooks": false,
+      "customkeylist": [],
+      "State": false
+    },
+    {
+      "DeviceIndex": 0,
+      "DeviceID": 1,
+      "ComponentIndex": 1,
+      "ObjectType": "input",
+      "ID": 2,
+      "Name": "Device 1.Input 2",
+      "Webhooks": false,
+      "customkeylist": [],
+      "State": false
+    }
+  ],
+  "Outputs": [
+    {
+      "DeviceIndex": 0,
+      "DeviceID": 1,
+      "ComponentIndex": 0,
+      "ObjectType": "output",
+      "ID": 1,
+      "Name": "Device 1.Output 1",
+      "Webhooks": false,
+      "customkeylist": [
+        "Group"
+      ],
+      "HasMeter": true,
+      "State": true,
+      "Temperature": null,
+      "Group": "Test Group"
+    },
+    {
+      "DeviceIndex": 0,
+      "DeviceID": 1,
+      "ComponentIndex": 1,
+      "ObjectType": "output",
+      "ID": 2,
+      "Name": "Device 1.Output 2",
+      "Webhooks": false,
+      "customkeylist": [
+        "Group"
+      ],
+      "HasMeter": true,
+      "State": false,
+      "Temperature": null,
+      "Group": "Test Group"
+    }
+  ],
+  "Meters": [
+    {
+      "DeviceIndex": 0,
+      "DeviceID": 1,
+      "ComponentIndex": 0,
+      "ObjectType": "meter",
+      "ID": 1,
+      "Name": "Meter 1",
+      "Webhooks": false,
+      "customkeylist": [],
+      "OnOutput": true,
+      "Power": null,
+      "Voltage": null,
+      "Current": null,
+      "PowerFactor": null,
+      "Energy": null,
+      "MockRate": 0
+    },
+    {
+      "DeviceIndex": 0,
+      "DeviceID": 1,
+      "ComponentIndex": 1,
+      "ObjectType": "meter",
+      "ID": 2,
+      "Name": "Meter 2",
+      "Webhooks": false,
+      "customkeylist": [],
+      "OnOutput": true,
+      "Power": null,
+      "Voltage": null,
+      "Current": null,
+      "PowerFactor": null,
+      "Energy": null,
+      "MockRate": 0
+    }
+  ],
+  "TempProbes": [],
+  "MetersSeperate": false,
+  "TemperatureMonitoring": true,
+  "Online": true,
+  "MacAddress": null,
+  "Temperature": null,
+  "Uptime": null,
+  "RestartRequired": null,
+  "WebhookInstallPending": false,
+  "SupportedWebhooks": [],
+  "InstalledWebhooks": [],
+  "customkeylist": [],
+  "TotalPower": 0,
+  "TotalEnergy": 0
+}

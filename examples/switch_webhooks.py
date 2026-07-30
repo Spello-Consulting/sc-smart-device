@@ -11,7 +11,7 @@ from switch_init import switch_init
 from sc_smart_device import SCSmartDevice
 
 # Test a Shelly switch
-device_identity = "Sydney Dev A"
+device_identity = "Spello Test"  # Change this to the name of your device in the configuration file
 
 # Note: Webhooks are not supported on Tasmota devices, so no Tasmota test section for this example.
 

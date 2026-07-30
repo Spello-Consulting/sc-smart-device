@@ -1,0 +1,54 @@
+{
+  "Index": 0,
+  "Model": "Tasmota",
+  "Name": "Device Test 2",
+  "ID": 2,
+  "ObjectType": "device",
+  "Simulate": true,
+  "SimulationFile": "/Users/nick/dev/sc-smart-device/simulation_files/Device_Test_2.json",
+  "ExpectOffline": false,
+  "Hostname": "192.168.1.21",
+  "Port": 80,
+  "Online": true,
+  "MacAddress": null,
+  "Uptime": null,
+  "Firmware": null,
+  "Temperature": null,
+  "Inputs": [],
+  "Outputs": [
+    {
+      "DeviceIndex": 0,
+      "DeviceID": 2,
+      "ComponentIndex": 0,
+      "ObjectType": "output",
+      "ID": 3,
+      "Name": "Device 2.Output 1",
+      "Webhooks": false,
+      "customkeylist": [],
+      "State": false,
+      "Temperature": null
+    }
+  ],
+  "Meters": [
+    {
+      "DeviceIndex": 0,
+      "DeviceID": 2,
+      "ComponentIndex": 0,
+      "ObjectType": "meter",
+      "ID": 3,
+      "Name": "Device 2.Meter 1",
+      "Webhooks": false,
+      "customkeylist": [],
+      "Power": null,
+      "Voltage": null,
+      "Current": null,
+      "PowerFactor": null,
+      "Energy": null
+    }
+  ],
+  "TempProbes": [],
+  "TotalPower": 0.0,
+  "TotalEnergy": 0.0,
+  "Label": "Device Test 2 (ID: 2)",
+  "customkeylist": []
+}
