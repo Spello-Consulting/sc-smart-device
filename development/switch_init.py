@@ -11,7 +11,7 @@ from sc_foundation import (
 
 from sc_smart_device import SCSmartDevice, smart_devices_validator
 
-CONFIG_FILE = "development/switch_config.yaml"
+CONFIG_FILE = "configs/dev_tasmota.yaml"
 
 
 def switch_init(wake_event: threading.Event | None = None, extra_validation: dict | None = None) -> tuple[SCConfigManager, SCLogger, SCSmartDevice]:

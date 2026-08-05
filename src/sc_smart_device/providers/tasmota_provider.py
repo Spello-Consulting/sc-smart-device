@@ -265,7 +265,7 @@ class TasmotaProvider(BaseProvider):
         self.retry_delay = settings.get("RetryDelay", self.retry_delay)
         self.ping_allowed = settings.get("PingAllowed", True)
 
-        relative_folder = settings.get("SimulationFileFolder")
+        relative_folder = settings.get("SimulationFileFolder", "simulation_files")
         self.simulation_file_folder = SCCommon.select_folder_location(relative_folder, create_folder=True)
 
         self._devices.clear()

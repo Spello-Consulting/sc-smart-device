@@ -1,0 +1,87 @@
+# Settings for oen or more Shelly smart switches. See documentation for more details.
+ShellyDevices:
+  AllowDebugLogging: False
+  ResponseTimeout: 3
+  RetryCount: 1
+  RetryDelay: 2
+  PingAllowed: True
+  WebhooksEnabled: False
+  # IP to listen for webhooks on. This should be the IP address of the machine running the app. Defaults to 0.0.0.0
+  WebhookHost: 0.0.0.0
+  # Port to listen for webhooks on. Defaults to 8787.
+  WebhookPort: 8787
+  # The URI path that webhooks will post to.
+  WebhookPath: /shelly/webhook  
+  # The webhooks to install by default
+  DefaultWebhooks:
+    Inputs:
+      - input.toggle_on
+      - input.toggle_off
+      - input.button_push
+    Outputs:
+      - switch.on
+      - switch.off
+  Devices:
+    - Name: Sydney Pool
+      Model: ShellyPlus1PM
+      Hostname: 192.168.86.20
+      Simulate: True
+      Inputs:
+        - Name: "Sydney Pool I1"
+      Outputs:
+        - Name: "Sydney Pool O1"
+      Meters:
+        - Name: "Sydney Pool M1"
+    - Name: Sydney Solar
+      Model: Shelly2PMG3
+      Hostname: 192.168.86.35
+      Simulate: True
+      ExpectOffline: True
+      Outputs:
+        - Name: "Solar Pump Output"
+          Size: "Large"
+        - Name: "Solar Valve Output"
+          Colour: "Blue"
+      Meters:
+        - Name: "Solar Pump Meter"
+        - Name: "Solar Pump Output"
+      TempProbes:
+        - Name: "Sydney Solar"
+        - Name: "Temp Roof"
+        - Name: "Temp Solar Return"
+        - Name: "Temp Pool Water"
+    - Name: Sydney Panel EM1
+      Model: ShellyEMG3
+      Hostname: 192.168.86.44
+      Simulate: True
+      Outputs:
+        - Name: "Sydney Panel EM1 O1"
+      Meters:
+        - Name: "Sydney Panel EM1 M1"
+        - Name: "Sydney Panel EM1 M2"
+    - Name: Sydney Dev A
+      Model: Shelly2PMG3
+      Hostname: 192.168.86.30
+      Simulate: True
+      ExpectOffline: True
+      Inputs:
+        - Name: "Sydney Dev A I1"
+          Webhooks: True
+        - Name: "Sydney Dev A I2"
+          Webhooks: True
+      Outputs:
+        - Name: "Sydney Dev A O1"
+        - Name: "Sydney Dev A O2"
+      Meters:
+        - Name: "Sydney Dev A M1"
+        - Name: "Sydney Dev A M2"
+
+Files:
+  LogfileName: dev_testing/logs/test_logfile.log
+  LogfileMaxLines: 501
+  TimestampFormat: "%Y-%m-%d %H:%M:%S.%f"
+  LogProcessID: True
+  LogThreadID: True
+  LogfileVerbosity: all
+  ConsoleVerbosity: detailed
+

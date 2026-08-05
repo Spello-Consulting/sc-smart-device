@@ -1,0 +1,41 @@
+Files:
+  LogfileName: logs/development.log
+  LogfileVerbosity: debug
+  ConsoleVerbosity: detailed
+
+
+SCSmartDevices:
+  AllowDebugLogging: False
+  ResponseTimeout: 3
+  RetryCount: 3
+  RetryDelay: 4
+  PingAllowed: True
+  Devices:
+    - Name: Tasmota01
+      Model: Tasmota
+      Hostname: 192.168.86.37
+      Simulate: True
+      ExpectOffline: False
+      Outputs:
+        - Name: "Tasmota01 O1"
+    - Name: Tasmota02
+      Model: Tasmota
+      Hostname: 192.168.86.41
+      Simulate: True
+      ExpectOffline: False
+      Outputs:
+        - Name: "Tasmota02 O1"
+    - Name: Tasmota03
+      Model: Tasmota
+      Hostname: 192.168.86.51
+      Simulate: True
+      ExpectOffline: False
+      Outputs:
+        - Name: "Tasmota03 O1"
+    - Name: Tasmota04
+      Model: Tasmota
+      Hostname: 192.168.86.52
+      Simulate: True
+      ExpectOffline: False
+      Outputs:
+        - Name: "Tasmota04 O1"

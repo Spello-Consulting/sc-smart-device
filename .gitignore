@@ -20,17 +20,6 @@ wheels/
 .cache_ggshield
 
 # App 
-/*.txt
-/*.json
-/*.csv
-config.yaml
 logs/
-development/*.yaml
-src/*.json
-src/*.csv
-src/*.log
-development/*.log
-development/*.yaml
-tests/logfile.log
-examples/logfile.log
-development/logfile.log
+.env.target
+simulation_files/

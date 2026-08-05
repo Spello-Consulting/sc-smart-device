@@ -1,0 +1,38 @@
+
+Files:
+  LogfileName: logs/tests.log
+  LogfileMaxLines: 500
+  LogfileVerbosity: detailed
+  ConsoleVerbosity: detailed
+
+
+SCSmartDevices:
+  ResponseTimeout: 5
+  RetryCount: 1
+  RetryDelay: 2
+  PingAllowed: False
+  SimulationFileFolder: simulation_files
+  Devices:
+    - Name: Device Test 1
+      Model: Shelly2PMG3
+      Hostname: 192.168.1.20
+      Simulate: True
+      Inputs:
+        - Name: "Device 1.Input 1"
+        - Name: "Device 1.Input 2"
+      Outputs:
+        - Name: "Device 1.Output 1"
+          Group: "Test Group"
+        - Name: "Device 1.Output 2"
+          Group: "Test Group"
+
+    - Name: Device Test 2
+      Model: Tasmota
+      Hostname: 192.168.1.21
+      Simulate: True
+      Tasmota:
+        DeviceType: smart_plug
+      Outputs:
+        - Name: "Device 2.Output 1"
+      Meters:
+        - Name: "Device 2.Meter 1"
