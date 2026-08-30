@@ -1927,14 +1927,96 @@ critical-error notification.  <code>None</code> disables notifications.</p>
 
 
 <h2 id="sc_smart_device.SmartDeviceWorker.pull_webhook_event" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">pull_webhook_event</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">pull_webhook_event</span><span class="p">(</span><span class="n">device_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">component_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">component_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h2>
 
 
     <div class="doc doc-contents ">
 
-        <p>Return the oldest queued webhook event and remove it from the queue.</p>
+        <p>Return the oldest queued webhook event matching the filters, and remove it.</p>
+<p>With no filters, returns the oldest queued event. When one or more
+filters are supplied, returns the oldest event for which <em>every</em>
+supplied filter matches (unsupplied filters are ignored).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>device_id</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Only match events whose <code>Device.ID</code> equals this.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>device_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Only match events whose <code>Device.Name</code> equals this.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>component_id</code>
+            </td>
+            <td>
+                  <code><span title="int">int</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Only match events whose <code>Component.ID</code> equals this.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>component_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Only match events whose <code>Component.Name</code> equals this.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     <p><span class="doc-section-title">Returns:</span></p>
@@ -1962,7 +2044,7 @@ critical-error notification.  <code>None</code> disables notifications.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p><code>Component</code>, etc.; or None if the queue is empty.</p>
+                <p><code>Component</code>, etc.; or None if no queued event matches.</p>
               </div>
             </td>
           </tr>

@@ -649,6 +649,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pulling-specific-events-from-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulling specific events from the queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tasmota-devices" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -834,6 +845,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pulling-specific-events-from-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulling specific events from the queue
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tasmota-devices" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -958,6 +980,57 @@ https://shelly-api-docs.shelly.cloud/gen2/ComponentsAndServices/Webhook#webhookc
       main()
 
 </code></pre>
+<h2 id="pulling-specific-events-from-the-queue">Pulling specific events from the queue</h2>
+<p>Incoming webhook events are held in an internal FIFO queue. Calling
+<code>pull_webhook_event()</code> with no arguments returns and removes the <strong>oldest</strong>
+queued event (or <code>None</code> when the queue is empty).</p>
+<p>If your app only cares about events for a particular device or component, you
+can pass one or more optional filters. <code>pull_webhook_event()</code> then returns the
+<strong>oldest event for which <em>every</em> supplied filter matches</strong>, removing just that
+event and leaving the rest of the queue untouched. Unsupplied filters are
+ignored, and <code>None</code> is returned when no queued event matches.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Matches when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>device_id</code></td>
+<td><code>int \| None</code></td>
+<td><code>event["Device"]["ID"]</code> equals it</td>
+</tr>
+<tr>
+<td><code>device_name</code></td>
+<td><code>str \| None</code></td>
+<td><code>event["Device"]["Name"]</code> equals it</td>
+</tr>
+<tr>
+<td><code>component_id</code></td>
+<td><code>int \| None</code></td>
+<td><code>event["Component"]["ID"]</code> equals it</td>
+</tr>
+<tr>
+<td><code>component_name</code></td>
+<td><code>str \| None</code></td>
+<td><code>event["Component"]["Name"]</code> equals it</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python"># Oldest event of any kind (unchanged, backward-compatible behaviour)
+event = smart_switch_control.pull_webhook_event()
+
+# Oldest event for the device named &quot;Boiler&quot;
+event = smart_switch_control.pull_webhook_event(device_name=&quot;Boiler&quot;)
+
+# Oldest event for one specific output of one specific device (AND)
+event = smart_switch_control.pull_webhook_event(device_id=1, component_name=&quot;Output 1&quot;)
+</code></pre>
+<p>The same filtered signature is available on <code>SCSmartDevice</code>,
+<code>SmartDeviceWorker</code> and the underlying <code>ShellyProvider</code>.</p>
 <h2 id="tasmota-devices">Tasmota devices</h2>
 <p>Tasmota ESP32 devices don't support webhooks, but they do support signalling to a client app via Matter (MQTT) events. This will be supported in a later version of this package.</p>
 
