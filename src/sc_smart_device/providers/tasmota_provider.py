@@ -183,7 +183,13 @@ class TasmotaProvider(BaseProvider):
     ) -> None:
         self._raise_runtime_error("Tasmota devices do not support webhooks.")
 
-    def pull_webhook_event(self) -> dict | None:  # noqa: PLR6301
+    def pull_webhook_event(  # noqa: PLR6301
+        self,
+        _device_id: int | None = None,
+        _device_name: str | None = None,
+        _component_id: int | None = None,
+        _component_name: str | None = None,
+    ) -> dict | None:
         return None
 
     def print_model_library(self, _mode_str: str = "brief", _model_id: str | None = None) -> str:  # noqa: PLR6301

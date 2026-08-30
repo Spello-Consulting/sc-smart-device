@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sc-smart-device"
-version = "3.3.0"
+version = "3.3.1"
 description = "Provides a simple, consistent access to Shelly and Tasmota smart switches and energy meters."
 readme = "README.md"
 requires-python = ">=3.13"

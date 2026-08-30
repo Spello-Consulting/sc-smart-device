@@ -53,7 +53,7 @@
         "Group"
       ],
       "HasMeter": true,
-      "State": false,
+      "State": true,
       "Temperature": null,
       "Group": "Test Group"
     },

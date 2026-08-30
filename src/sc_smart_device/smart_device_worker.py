@@ -249,14 +249,30 @@ class SmartDeviceWorker:
         """  # noqa: DOC502
         return self._smart_device.is_device_online(device_identity)
 
-    def pull_webhook_event(self) -> dict | None:
-        """Return the oldest queued webhook event and remove it from the queue.
+    def pull_webhook_event(
+        self,
+        device_id: int | None = None,
+        device_name: str | None = None,
+        component_id: int | None = None,
+        component_name: str | None = None,
+    ) -> dict | None:
+        """Return the oldest queued webhook event matching the filters, and remove it.
+
+        With no filters, returns the oldest queued event. When one or more
+        filters are supplied, returns the oldest event for which *every*
+        supplied filter matches (unsupplied filters are ignored).
+
+        Args:
+            device_id: Only match events whose ``Device.ID`` equals this.
+            device_name: Only match events whose ``Device.Name`` equals this.
+            component_id: Only match events whose ``Component.ID`` equals this.
+            component_name: Only match events whose ``Component.Name`` equals this.
 
         Returns:
             Event dict with keys ``timestamp``, ``Event``, ``Device``,
-            ``Component``, etc.; or None if the queue is empty.
+            ``Component``, etc.; or None if no queued event matches.
         """
-        return self._smart_device.pull_webhook_event()
+        return self._smart_device.pull_webhook_event(device_id, device_name, component_id, component_name)
 
     def does_device_have_webhooks(self, device: dict) -> bool:
         """Return True if any component of the device has webhooks enabled."""

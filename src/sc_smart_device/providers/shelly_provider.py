@@ -273,10 +273,46 @@ class ShellyProvider(BaseProvider):
                 raise RuntimeError(err)
             self._list_installed_webhooks(device)
 
-    def pull_webhook_event(self) -> dict | None:
-        if self.webhook_event_queue:
-            return self.webhook_event_queue.pop(0)
-        return None
+    def pull_webhook_event(
+        self,
+        device_id: int | None = None,
+        device_name: str | None = None,
+        component_id: int | None = None,
+        component_name: str | None = None,
+    ) -> dict | None:
+        if device_id is None and device_name is None and component_id is None and component_name is None:
+            if self.webhook_event_queue:
+                return self.webhook_event_queue.pop(0)
+            return None
+        match_index = next(
+            (
+                index
+                for index, event in enumerate(self.webhook_event_queue)
+                if self._event_matches(event, device_id, device_name, component_id, component_name)
+            ),
+            None,
+        )
+        if match_index is None:
+            return None
+        return self.webhook_event_queue.pop(match_index)
+
+    @staticmethod
+    def _event_matches(
+        event: dict,
+        device_id: int | None,
+        device_name: str | None,
+        component_id: int | None,
+        component_name: str | None,
+    ) -> bool:
+        device = event.get("Device") or {}
+        component = event.get("Component") or {}
+        if device_id is not None and device.get("ID") != device_id:
+            return False
+        if device_name is not None and device.get("Name") != device_name:
+            return False
+        if component_id is not None and component.get("ID") != component_id:
+            return False
+        return not (component_name is not None and component.get("Name") != component_name)
 
     def print_device_status(self, device_identity: int | str | None = None) -> str:  # noqa: PLR0912
         device_index = None

@@ -96,8 +96,14 @@ class BaseProvider(ABC):
         msg = f"{type(self).__name__} does not support webhooks."
         raise RuntimeError(msg)
 
-    def pull_webhook_event(self) -> dict | None:  # noqa: PLR6301
-        """Return the oldest queued webhook event, or None."""
+    def pull_webhook_event(  # noqa: PLR6301
+        self,
+        _device_id: int | None = None,
+        _device_name: str | None = None,
+        _component_id: int | None = None,
+        _component_name: str | None = None,
+    ) -> dict | None:
+        """Return the oldest queued webhook event matching the given filters, or None."""
         return None
 
     def print_model_library(self, _mode_str: str = "brief", _model_id: str | None = None) -> str:  # noqa: PLR6301

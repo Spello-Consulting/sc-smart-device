@@ -21,6 +21,39 @@ Here's an example application:
   %}
 ```
 
+## Pulling specific events from the queue
+
+Incoming webhook events are held in an internal FIFO queue. Calling
+`pull_webhook_event()` with no arguments returns and removes the **oldest**
+queued event (or `None` when the queue is empty).
+
+If your app only cares about events for a particular device or component, you
+can pass one or more optional filters. `pull_webhook_event()` then returns the
+**oldest event for which _every_ supplied filter matches**, removing just that
+event and leaving the rest of the queue untouched. Unsupplied filters are
+ignored, and `None` is returned when no queued event matches.
+
+| Argument         | Type          | Matches when                        |
+|------------------|---------------|-------------------------------------|
+| `device_id`      | `int \| None`  | `event["Device"]["ID"]` equals it   |
+| `device_name`    | `str \| None`  | `event["Device"]["Name"]` equals it |
+| `component_id`   | `int \| None`  | `event["Component"]["ID"]` equals it   |
+| `component_name` | `str \| None`  | `event["Component"]["Name"]` equals it |
+
+```python
+# Oldest event of any kind (unchanged, backward-compatible behaviour)
+event = smart_switch_control.pull_webhook_event()
+
+# Oldest event for the device named "Boiler"
+event = smart_switch_control.pull_webhook_event(device_name="Boiler")
+
+# Oldest event for one specific output of one specific device (AND)
+event = smart_switch_control.pull_webhook_event(device_id=1, component_name="Output 1")
+```
+
+The same filtered signature is available on `SCSmartDevice`,
+`SmartDeviceWorker` and the underlying `ShellyProvider`.
+
 ## Tasmota devices
 
 Tasmota ESP32 devices don't support webhooks, but they do support signalling to a client app via Matter (MQTT) events. This will be supported in a later version of this package.
