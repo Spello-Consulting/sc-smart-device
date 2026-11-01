@@ -244,6 +244,26 @@
     - 2 energy meters (seperate from outputs)
 - Internal temperature monitoring: Yes
 
+### [Shelly 3EM-63T Gen3 Monophase](https://www.shelly.com/products/shelly-3em-63t-gen3)
+
+- Model ID: Shelly3EM-63T
+- Protocol: RPC
+- Components: 
+    - 0 inputs
+    - 0 outputs
+    - 3 energy meters (seperate from outputs)
+- Internal temperature monitoring: Yes
+
+### [Shelly 3EM-63W Gen3 Monophase](https://www.shelly.com/products/shelly-3em-63w-gen3)
+
+- Model ID: Shelly3EM-63W
+- Protocol: RPC
+- Components: 
+    - 0 inputs
+    - 0 outputs
+    - 3 energy meters (seperate from outputs)
+- Internal temperature monitoring: Yes
+
 ## Generation 4 Devices
 
 ### [Shelly EM Mini Gen4](https://www.shelly.com/products/shelly-em-mini-gen4)

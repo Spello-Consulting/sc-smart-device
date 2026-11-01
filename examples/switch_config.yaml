@@ -25,19 +25,26 @@ SCSmartDevices:
         - switch.on
         - switch.off  
   Devices:
-    - Name: Spello Test
-      Model: Shelly2PMG3
-      Hostname: 192.168.86.36
-      Simulate: False
-      ExpectOffline: True
-      Inputs:
-        - Name: "Spello Test I1"
-          Webhooks: True
-        - Name: "Spello Test I2"
-      Outputs:
-        - Name: "Spello Test O1"
-          Webhooks: True
-        - Name: "Spello Test O2"
+    # - Name: Spello Test
+    #   Model: Shelly2PMG3
+    #   Hostname: 192.168.86.36
+    #   Simulate: False
+    #   ExpectOffline: True
+    #   Inputs:
+    #     - Name: "Spello Test I1"
+    #       Webhooks: True
+    #     - Name: "Spello Test I2"
+    #   Outputs:
+    #     - Name: "Spello Test O1"
+    #       Webhooks: True
+    #     - Name: "Spello Test O2"
+    - Name: Power EM4
+      Model: Shelly3EM-63T
+      Hostname: 192.168.86.77
+      Meters:
+        - Name: "Power EM4.1"
+        - Name: "Power EM4.2"
+        - Name: "Power EM4.3"
     # - Name: Sydney Dev A
     #   Model: Shelly2PMG3
     #   Hostname: 192.168.86.30

@@ -288,7 +288,7 @@
     "meters_seperate": false,
     "temperature_monitoring": true
   },
-{
+  {
     "model": "ShellyEMG3",
     "name": "Shelly EM Gen3",
     "url": "https://shelly-api-docs.shelly.cloud/gen2/Devices/Gen3/ShellyEMG3",
@@ -300,8 +300,30 @@
     "meters_seperate": true,
     "temperature_monitoring": true
   },  
-
-
+  {
+    "model": "Shelly3EM-63T",
+    "name": "Shelly 3EM-63T Gen3 Monophase",
+    "url": "https://www.shelly.com/products/shelly-3em-63t-gen3",
+    "generation": 3,
+    "protocol": "RPC",
+    "inputs": 0,
+    "outputs": 0,
+    "meters": 3,
+    "meters_seperate": true,
+    "temperature_monitoring": true
+  },  
+  {
+    "model": "Shelly3EM-63W",
+    "name": "Shelly 3EM-63W Gen3 Monophase",
+    "url": "https://www.shelly.com/products/shelly-3em-63w-gen3",
+    "generation": 3,
+    "protocol": "RPC",
+    "inputs": 0,
+    "outputs": 0,
+    "meters": 3,
+    "meters_seperate": true,
+    "temperature_monitoring": true
+  },  
   {
     "model": "ShellyEMMiniG4",
     "name": "Shelly EM Mini Gen4",

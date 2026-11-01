@@ -4,7 +4,6 @@ __pycache__/
 .python-version
 .ruff_cache/
 .venv/
-.vscode/
 *.egg
 *.egg-info
 *.py[oc]
@@ -23,3 +22,4 @@ wheels/
 logs/
 .env.target
 simulation_files/
+examples/logfile.log
